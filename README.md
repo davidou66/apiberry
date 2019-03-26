@@ -33,7 +33,17 @@ $ node server.js
 ```
 
 Routes available: 
+- GET /ps4/status
+- GET /ps4/wakeup
+- GET /ps4/standby
+- GET /ps4/title/:title
 
+If you want to use it with Alexa, take a look at [this](https://github.com/davidou66/apiberry-gateway) 
 
 ## Usefull links ##
 - Games id https://ps4database.io/search
+
+## Roadmap ##
+- Implements Passport with token or other authentication
+- Check all the returns
+- Logs in file so it can be reused for analytics or debug
