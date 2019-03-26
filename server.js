@@ -1,4 +1,3 @@
-var http = require('http');
 var express = require('express');
 const { Device } = require('ps4-waker');
 
@@ -16,7 +15,7 @@ app.get('/ps4/status', function(req, res) {
 
     ps4.getDeviceStatus()
     .then(      
-        data => res.status(200).send(JSON.stringify(data)),
+        data => res.status(200).send(data),
         err => res.status(500).send(JSON.stringify(err))
     )
     .then(() => ps4.close());
@@ -59,13 +58,10 @@ app.get('/ps4/title/:title', function(req, res) {
         debug: true
     };
     var ps4 = new Device(opt);
+
     var title = req.params.title;
 
-    console.log(title);
-
     var id = gamesid.ids[title];
-
-    console.log(gamesid);
 
     ps4.startTitle(id)
     .then(
@@ -86,6 +82,7 @@ app.use(function(err, req, res, next) {
       next(err);
     }
 });
+
 
 app.listen(3000);
 console.log('App Server running at port 3000');

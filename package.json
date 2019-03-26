@@ -1,7 +1,7 @@
 {
   "name": "apiberry",
   "version": "1.0.0",
-  "description": "Api for all",
+  "description": "Local API for ps4-waker",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "connect": "^3.6.6",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "ps4-waker": "^1.8.4"
   },
-  "repository":""
+  "repository": "https://github.com/davidou66/apiberry"
 }
